@@ -18,7 +18,7 @@ class MovieDetailScreen extends StatelessWidget {
       body: Container(
         height: height * 3,
         child: Stack(children: [
-          _backGroundImage(movie.poster_path),
+          _backGroundImage(movie.posterPath),
           _mainCard(movie, height, width),
           _subImageAndDescription(height, width, movie),
           _backButton(height, width, context),
@@ -73,12 +73,12 @@ Widget _mainCard(Movie movie, double height, double width) {
                       _getSession('주요 출연진'),
                       Container(
                         width: width * 0.2,
-                        height: height * 0.2,
+                        height: height * 0.15,
                         child: Column(
                           children: [
                             ClipOval(
                               child: Image.network(
-                                'https://image.tmdb.org/t/p/w500${movie.poster_path}',
+                                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
                                 width: 70,
                                 height: 70,
                                 fit: BoxFit.cover,
@@ -127,7 +127,7 @@ Widget _subImageAndDescription(double height, double width, Movie movie) {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(
-                  'https://image.tmdb.org/t/p/w500${movie.poster_path}'),
+                  'https://image.tmdb.org/t/p/w500${movie.posterPath}'),
             ),
           ),
         ),
@@ -183,7 +183,7 @@ Widget _subImageAndDescription(double height, double width, Movie movie) {
                 ],
               ),
               Text(
-                '${movie.release_date} Released',
+                '${movie.releaseDate} Released',
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -191,7 +191,7 @@ Widget _subImageAndDescription(double height, double width, Movie movie) {
               ),
               RatingBar.builder(
                 itemSize: 15.0,
-                initialRating: movie.vote_average / 2,
+                initialRating: movie.voteAverage / 2,
                 minRating: 1,
                 direction: Axis.horizontal,
                 allowHalfRating: true,

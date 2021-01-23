@@ -33,7 +33,7 @@ class MovieController extends ControllerMVC {
 
       //adding Genres into Movies
       for (Movie movie in _movies) {
-        for (int genreId in movie.genre_ids) {
+        for (int genreId in movie.genreIds) {
           _genres
               .where((genre) => genre.id == genreId)
               .map((genre) => movie.genre.add(genre))

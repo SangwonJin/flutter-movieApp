@@ -77,7 +77,7 @@ Widget _horizontalUI(BuildContext context, double height, double width) {
                           borderRadius: BorderRadius.circular(8.0),
                           image: DecorationImage(
                             image: NetworkImage(
-                                'https://image.tmdb.org/t/p/w500${snapshot.data[index].poster_path}'),
+                                'https://image.tmdb.org/t/p/w500${snapshot.data[index].posterPath}'),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -96,7 +96,7 @@ Widget _horizontalUI(BuildContext context, double height, double width) {
                       ),
                       RatingBar.builder(
                         itemSize: 15.0,
-                        initialRating: snapshot.data[index].vote_average / 2,
+                        initialRating: snapshot.data[index].voteAverage / 2,
                         minRating: 1,
                         direction: Axis.horizontal,
                         allowHalfRating: true,
@@ -142,7 +142,7 @@ Widget _verticalUI(
                         borderRadius: BorderRadius.circular(8.0),
                         image: DecorationImage(
                           image: NetworkImage(
-                              'https://image.tmdb.org/t/p/w500${snapshot.data[index].poster_path}'),
+                              'https://image.tmdb.org/t/p/w500${snapshot.data[index].posterPath}'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -168,7 +168,7 @@ Widget _verticalUI(
                                 RatingBar.builder(
                                   itemSize: 15.0,
                                   initialRating:
-                                      snapshot.data[index].vote_average / 2,
+                                      snapshot.data[index].voteAverage / 2,
                                   minRating: 1,
                                   direction: Axis.horizontal,
                                   allowHalfRating: true,
@@ -204,7 +204,7 @@ Widget _verticalUI(
                                     itemCount:
                                         snapshot.data[index].genre.length),
                               ),
-                              Text(snapshot.data[index].release_date,
+                              Text(snapshot.data[index].releaseDate,
                                   style: TextStyle(
                                       color: Colors.grey,
                                       fontSize: width * 0.03))
